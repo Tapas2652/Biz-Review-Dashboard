@@ -39,7 +39,8 @@ except Exception:
 # -----------------------------
 # Configuration
 # -----------------------------
-DEFAULT_FILE = Path(r"https://j2w-my.sharepoint.com/:x:/r/personal/tapas_kumar_joulestowatts_com/_layouts/15/Doc.aspx?sourcedoc=%7B850F7E8B-9D4B-452E-BC16-38CEC366554E%7D&file=CEO%27s%20Review%20dashboard%20(1).xlsx&action=default&mobileredirect=true&DefaultItemOpen=1")
+DEFAULT_FILE = Path(r"C:\Users\E36250360\OneDrive - JoulestoWatts Business Solutions Pvt Ltd\CEO's Review dashboard (1).xlsx")
+
 EXCEL_PATH = Path(os.getenv("CEO_DASHBOARD_XLSX", str(DEFAULT_FILE)))
 
 DISPLAY_BH = [
