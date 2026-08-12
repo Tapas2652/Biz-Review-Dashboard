@@ -35,12 +35,19 @@ try:
 except Exception:
     AUTO_REFRESH_AVAILABLE = False
 
+import io
+import requests
+import pandas as pd
 
+response = requests.get(st.secrets["https://j2w-my.sharepoint.com/:x:/g/personal/tapas_kumar_joulestowatts_com/IQCLfg-FS50uRbwWOM7DZlVOAZkJG5-UpukaFDNw-bjfzm0?e=0K14ft"], timeout=60)
+response.raise_for_status()
+
+xl = pd.ExcelFile(io.BytesIO(response.content))
 # -----------------------------
 # Configuration
 # -----------------------------
-DEFAULT_FILE = Path(r"C:\Users\E36250360\OneDrive - JoulestoWatts Business Solutions Pvt Ltd\CEO's Review dashboard (1).xlsx")
-EXCEL_PATH = Path(os.getenv("CEO_DASHBOARD_XLSX", str(DEFAULT_FILE)))
+#DEFAULT_FILE = Path(r"C:\Users\E36250360\OneDrive - JoulestoWatts Business Solutions Pvt Ltd\CEO's Review dashboard (1).xlsx")
+#EXCEL_PATH = Path(os.getenv("CEO_DASHBOARD_XLSX", str(DEFAULT_FILE)))
 
 DISPLAY_BH = [
     "Sadhna",
