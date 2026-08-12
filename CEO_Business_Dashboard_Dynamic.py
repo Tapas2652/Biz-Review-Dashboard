@@ -40,7 +40,6 @@ except Exception:
 # Configuration
 # -----------------------------
 DEFAULT_FILE = Path(r"C:\Users\E36250360\OneDrive - JoulestoWatts Business Solutions Pvt Ltd\CEO's Review dashboard (1).xlsx")
-
 EXCEL_PATH = Path(os.getenv("CEO_DASHBOARD_XLSX", str(DEFAULT_FILE)))
 
 DISPLAY_BH = [
