@@ -39,10 +39,13 @@ import io
 import requests
 import pandas as pd
 
-response = requests.get(st.secrets["https://j2w-my.sharepoint.com/:x:/g/personal/tapas_kumar_joulestowatts_com/IQCLfg-FS50uRbwWOM7DZlVOAZkJG5-UpukaFDNw-bjfzm0?e=0K14ft"], timeout=60)
+EXCEL_URL = st.secrets["EXCEL_URL"]
+
+response = requests.get(EXCEL_URL, timeout=60)
 response.raise_for_status()
 
-xl = pd.ExcelFile(io.BytesIO(response.content))
+excel_file = io.BytesIO(response.content)
+xl = pd.ExcelFile(excel_file, engine="openpyxl")
 # -----------------------------
 # Configuration
 # -----------------------------
